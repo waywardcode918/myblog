@@ -126,7 +126,7 @@ export default {
 		background-color: white;
 			.md-top {
 		width: 100%;
-		height: 65px;
+		min-height: 65px;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
