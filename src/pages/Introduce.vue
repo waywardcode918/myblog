@@ -1,7 +1,13 @@
 <!--  -->
 <template>
 	<div class="intr-page">
-		<img :src="require('@/assets/showimg.jpg')" class="imgs" />
+		<div class="imgs">
+			<el-carousel height="300px">
+				<el-carousel-item v-for="item in imgUelList" :key="item.imgUrl">
+					<img :src="item.imgUrl" class="imgs-item" />
+				</el-carousel-item>
+			</el-carousel>
+		</div>
 		<h2 class="welcome-text">欢迎来到"任性的代码"的博客</h2>
 		<p class="my-intr">一个喜爱记录自己学习的过程的前端程序猿的博客</p>
 		<el-button
@@ -9,7 +15,10 @@
 			style="margin-bottom: 20px"
 			class="goto-button"
 			@click="goShow"
-			>前往查看<i class="el-icon-arrow-right" style="margin-left:10px"></i
+			>前往查看<i
+				class="el-icon-arrow-right"
+				style="margin-left: 10px"
+			></i
 		></el-button>
 		<el-row>
 			<el-col
@@ -25,7 +34,10 @@
 			</el-col>
 		</el-row>
 		<footer class="footer">
-			<p class="footer-code">NIU BCLASS | Copyright © 2020-present waywordcode 沪ICP备11526549号-1</p>
+			<p class="footer-code">
+				NIU BCLASS | Copyright © 2020-present waywordcode
+				沪ICP备11526549号-1
+			</p>
 		</footer>
 	</div>
 </template>
@@ -51,19 +63,29 @@ export default {
 						"自从各种插件和ui库的出现，使得前端越来越与后端分开，逐步走向工程化，特别是随着react、vue等框架的出现和完善，使得前后端更加分离，前端做前端的事，后端做后端的事！",
 				},
 			],
+			imgUelList:[]
 		};
+		
+		
 	},
-	methods:{
-		goShow(){
+	mounted(){
+	const a = require.context("../assets", false, /.jpg$/).keys()
+	this.imgUelList=a.map(function(item){
+		return{
+			imgUrl:require(`@/assets/${item.split('/')[1]}`)
+		}
+	})
+	},
+	methods: {
+		goShow() {
 			this.$router.push({
 				path: "/Home/Article",
-						query: {
-							type: window.typeCode,
-						},
-			})
-		}
-	}
-
+				query: {
+					type: window.typeCode,
+				},
+			});
+		},
+	},
 };
 </script>
 <style lang='less' scoped>
@@ -73,7 +95,7 @@ export default {
 	flex-direction: column;
 	align-items: center;
 	.imgs {
-		height: 300px;
+		
 		width: 532px;
 		background-size: 100% 100%;
 		margin-top: 50px;
@@ -99,12 +121,18 @@ export default {
 		width: 150px;
 		font-size: 18px;
 	}
-	.footer{
+	.footer {
 		margin-top: 60px;
 		margin-bottom: 60px;
-		.footer-code{
+		.footer-code {
 			font-size: 14px;
 		}
 	}
+	.imgs-item{
+		background-size: 100% 100%;
+				height: 300px;
+		width: 532px;
+	}
 }
+
 </style>

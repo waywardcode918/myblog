@@ -1,4 +1,4 @@
-# mdblog
+# myblog
 
 ## Project setup
 ```
