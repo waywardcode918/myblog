@@ -63,7 +63,7 @@ export default {
 			hrefArray:{
 				myBlog:'https://www.cnblogs.com/waywordcode/',
 				gitee:'https://gitee.com/waywordcode',
-				blogCode:'https://gitee.com/waywordcode/web/tree/master/mdblog/mdblog'
+				blogCode:'https://github.com/waywardcode918/myblog'
 			}
 		};
 	},
