@@ -1,0 +1,9 @@
+CACHE MANIFEST
+#version 1.0
+CACHE：
+    /md/*
+	../assets/*
+NETWORK:
+    *
+FALLBACK:
+    / /404.html
