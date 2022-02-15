@@ -1,33 +1,33 @@
 # myblog
 
-## Project setup
+## 依赖下载
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 项目运行
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 打包
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
 
 ### 插件
+采用了v-md-editor插件读取本地的md文件
 ```
 npm i @kangc/v-md-editor -S
 ```
 ### 部署
+采用vercel实现自动化部署
 ```
-vercel
+https://vercel.com/login?next=%2Fdashboard
+```
+## 博客展示
+```
+https://myblog-delta-gold.vercel.app/#/Home/Introduce
 ```
 
